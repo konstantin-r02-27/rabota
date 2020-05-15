@@ -26,10 +26,10 @@
         </div>
     </header>
     <?php
-    if ($_SESSION['error']==1){$_SESSION['error']=0;?>
+    if ($_GET['error']==1){$_GET['error']=0;?>
         <p_col class="p_col mb-3 font-weight-normal">Данные ведены не корректно</p_col>
     <?php }
-    if ($_SESSION['error']==2){$_SESSION['error']=0;?>
+    if ($_GET['error']==2){$_GET['error']=0;?>
         <p_col class="p_col mb-3 font-weight-normal">Такого пользователя не существует</p_col>
     <?php }
     if ($_SESSION['flag']==0): ?>
