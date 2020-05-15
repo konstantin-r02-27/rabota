@@ -1,5 +1,5 @@
 <?php session_start();
-print_r($_SESSION);?>
+//print_r ($_GET);?>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -29,7 +29,7 @@ print_r($_SESSION);?>
         <form action="../users/index.php" method="post">
             <button class="btn btn-lg btn-primary btn-block btn-secondary" type="submit">Назад</button>
         </form>
-        <form action="redactor.php" method="post">
+        <form action="redactor.php" method="get">
             <table class="table text-center table-light">
 
                 <thead>
@@ -41,8 +41,7 @@ print_r($_SESSION);?>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $adres=$_SESSION['adres_users'];
-                $file = file_get_contents($adres);
+                <?php  $file = file_get_contents("../../sating/Users/".$_GET['login'].".json");
                 $userData = json_decode($file, TRUE);?>
                 <tr>
 
@@ -69,7 +68,7 @@ print_r($_SESSION);?>
                 </tbody>
 
             </table>
-            <button class="btn btn-lg btn-primary btn-block btn-secondary" type="submit">Внести изменения</button>
+            <button value="<?php print_r($_GET['login']);?>" name="login" class="btn btn-lg btn-primary btn-block btn-secondary" type="submit">Внести изменения</button>
         </form>
     <?php else:include '../../sating/exit.php';endif; //    print_r($_POST);?>
     <footer class="mastfoot mt-auto">

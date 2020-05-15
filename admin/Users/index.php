@@ -64,9 +64,8 @@
                 <td><?php echo $data[$j];?></td>
                 <td><?php if ($role[$j]==1):?>Пользователь<?php else: ?>Администратор<?php endif;?></td>
                 <td>
-                    <form action="../redactor/index.php" method="post"  name="role">
-                        <?php // $_SESSION['adres_users']=$adres_users[$j];?>
-                        <p value="<?php $adres_users[$j];?>"><button  class="btn btn-secondary" type="submit">Редактирование</button></p>
+                    <form action="../redactor/index.php" method="GET">
+                        <p><button value="<?php print_r($login[$j]);?>" name="login" class="btn btn-secondary" type="submit">Редактирование</button></p>
                     </form></td>
             </tr>
             <?php }endwhile;?>
@@ -75,7 +74,7 @@
         <?php else:
         include '../../sating/exit.php';
     endif;
-    print_r( $adres_users);?>
+   // print_r($adres_users);?>
     <footer class="mastfoot mt-auto">
         <div>
             <p>Создал по макету</p>
