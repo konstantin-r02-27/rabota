@@ -17,12 +17,12 @@ if (file_exists($adres))
 	}
 	else
 	{
-		$_SESSION['error']=1;
+		$_GET["error"]=1;
 		include '../avtorizacia/index.php';
 	}
 }
 else {
-	$_SESSION['error']=2;
+	$_GET["error"]=2;
 	include '../avtorizacia/index.php';
 }
 ?>
